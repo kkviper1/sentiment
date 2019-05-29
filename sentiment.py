@@ -12,7 +12,7 @@ pos = 0
 neu = 0
 
 
-# Open the xlsx file using dataframes from pandas
+# Open the csv file using dataframes from pandas
 df = pd.read_csv('Data_Dump.csv')
 df.fillna('0', axis=1, inplace=True)
 df = df.astype(str)
