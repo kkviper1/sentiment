@@ -13,7 +13,7 @@ neu = 0
 
 
 # Open the xlsx file using dataframes from pandas
-df = pd.read_excel('Message_Classification.xlsx')
+df = pd.read_csv('Data_Dump.csv')
 df.fillna('0', axis=1, inplace=True)
 df = df.astype(str)
 
@@ -22,7 +22,9 @@ removeSpecialCharacters = ['\.', '\;', '\:', '\!', '\?', '\-', '\#[A-Za-z0-9]+',
 for item in removeSpecialCharacters:
     df.replace(item, '', regex=True, inplace=True)
 
-A = df.loc['message_original'] = df['message_original'].apply(str)
+
+
+A = df.loc['Message_Original'] = df['Message_Original'].apply(str)
 df['sentiment'] = A.apply(stm.sentimentP)
 #df['subjectivity'] = A.apply(stm.sentimentS)
 #subjectivity = df['subjectivity']
@@ -100,7 +102,7 @@ dvl.dataVisualization(pos, neg, neu)
 # This is used to convert the data elements into a output file.Commented because of data would keep writing into the outputfile in each run of the code
 
 df1 = pd.DataFrame(df)
-df1.drop(['classification_flag'], 1)
+#df1.drop(['classification_flag'], 1)
 writer = pd.ExcelWriter('output.xlsx', engine='xlsxwriter')
 df.to_excel(writer, sheet_name='Sheet1')
 writer.save()
