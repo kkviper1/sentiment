@@ -7,6 +7,7 @@ from func import sentimfunc as stm
 from func import datavil as dvl
 from func import blankck as blk
 from func import classck as clck
+from func import heatmap as hmp
 import MySQLdb
 import pandas.io.sql as psql
 
@@ -209,10 +210,12 @@ for index in range(len(df2)):
         IntSent = df2.loc[index, "Intermediate Sentiment"]
         values.append((NA,sentiment,category,DifCount,IntSent,msgID))
     #Print statement for debugging purposes
-    print ('insert into db')
+    #print ('insert into db')
 
 #Executing query6
 cursor.executemany(query6, values)
+
+hmp.heatmap(df1)
 
 #closing the cursor object, committing the changes to the database and closing the database
 cursor.close()
