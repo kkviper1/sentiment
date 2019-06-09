@@ -1,0 +1,6 @@
+1st Match : 2-4 Loss; K/A/D : 3/0/4
+2nd Match : 2-4 Loss; K/A/D : 5/1/4
+3rd Match : 3-1 Win (Surrender); K/A/D : 5/0/1
+4th Match : 4-2 Win ; K/A/D : 5/0/3
+5th Match : 1-4 Loss ; K/A/D : 4/0/4
+ 
