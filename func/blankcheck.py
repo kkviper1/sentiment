@@ -1,13 +1,13 @@
 class blankck:
-	def blankcheck(df1,df2):
+	def blankcheck(df):
 		blank=0
-		for row,i in enumerate(df1["Message_Original"]):
+		for row,i in enumerate(df["Message_Original"]):
 			i = str(i)
 			if i == "0":
 				blank+= 1
-				df2.loc[row , 'NA'] ="Yes"
+				df.loc[row , 'NA'] ="Yes"
 			else:
-				df2.loc[row , 'NA'] = "No"
+				df.loc[row , 'NA'] = "No"
 		#Print statement for debugging purposes
-			#print ('blank check going on')
+			print ('blank check going on')
 		return blank
